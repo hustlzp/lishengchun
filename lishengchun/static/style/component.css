@@ -21,3 +21,16 @@
 .font-ming {
   font-family: "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", "AR PL UMing TW MBE", "PMingLiU", "MingLiU";
 }
+.works-wap {
+  margin-top: 25px;
+}
+.works-wap .work-item {
+  width: 280px;
+  margin-bottom: 20px;
+}
+.works-wap .work-item .work-link {
+  display: inline-block;
+}
+.works-wap .work-item .work-title {
+  margin-right: 5px;
+}

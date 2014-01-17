@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% from "macro/form.html" import field_errors, horizontal_field %}
+
+{% block page_title %}添加作品{% endblock %}
+{% block page_id %}page-add-work{% endblock %}
+
+{% block body %}
+
+   <form id="form-add-work" class="form-horizontal" method="post"
+         action="{{ url_for('admin.add_work') }}" enctype="multipart/form-data">
+      <fieldset>
+         <legend>添加作品</legend>
+
+         {{ form.csrf_token }}
+
+         {{ horizontal_field(form.type_id, length=3) }}
+
+
+
+         {{ horizontal_field(form.image, length=3) }}
+
+         {{ horizontal_field(form.title, length=3) }}
+
+         {{ horizontal_field(form.desc, rows=5) }}
+
+         <div class="form-group">
+            <div class="col-md-6 col-md-offset-2">
+               <input type="submit" value="提交" class="btn btn-sm btn-primary"/>
+            </div>
+         </div>
+      </fieldset>
+   </form>
+
+{% endblock %}
