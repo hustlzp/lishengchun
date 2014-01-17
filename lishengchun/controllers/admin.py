@@ -1,14 +1,30 @@
 # coding: utf-8
 import os
 from flask.ext.uploads import extension
-from flask import render_template, Blueprint, request, redirect, url_for
+from flask import render_template, Blueprint, request, redirect, url_for, session
 from ..uploadsets import workimages
 from PIL import Image
-from ..forms import WorkForm
+from ..forms import WorkForm, SigninForm
 from ..models import db, Work, WorkType
 from ..utils import random_filename
 
 bp = Blueprint('admin', __name__)
+
+
+@bp.route('/signin', methods=['GET', 'POST'])
+def signin():
+    form = SigninForm()
+    if form.validate_on_submit():
+        session.permanent = True
+        session['role'] = 'admin'
+        return redirect(url_for('site.index'))
+    return render_template('admin/signin.html', form=form)
+
+
+@bp.route('/signout')
+def signout():
+    session.pop('role', None)
+    return redirect(url_for('site.index'))
 
 
 @bp.route('/add_work', methods=['GET', 'POST'])

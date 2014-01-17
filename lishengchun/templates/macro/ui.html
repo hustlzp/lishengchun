@@ -1,0 +1,35 @@
+{% macro render_works(works) %}
+   <script src="{{ url_for('static', filename='js/imagesloaded.min.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/masonry.min.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/lightbox-2.6.min.js') }}"></script>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style/lightbox.css') }}"/>
+   <script>
+      $('.works-wap').imagesLoaded(function () {
+         $('.works-wap').masonry({
+            columnWidth: 313,
+            itemSelector: '.work-item'
+         });
+      })
+   </script>
+
+   <div class="works-wap">
+      {% for w in works %}
+         <div class="work-item">
+            <a href="{{ w.url }}" class="work-link" data-lightbox="work" title="{{ w.title }}">
+               <img src="{{ w.url }}" class="work-image img-responsive" alt="{{ w.title }}"/>
+            </a>
+
+            <p class="work-info">
+               <a class="work-title"
+                  href="{{ url_for('work.view', work_id=w.id) }}">{{ w.title }}</a>
+               <span class="created">{{ w.created.date() }}</span>
+               {% if session.role == 'admin' %}
+                  <a href="{{ url_for('admin.edit_work', work_id=w.id) }}" title="编辑">
+                     <i class="fa fa-edit"></i>
+                  </a>
+               {% endif %}
+            </p>
+         </div>
+      {% endfor %}
+   </div>
+{% endmacro %}

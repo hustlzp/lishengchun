@@ -7,19 +7,15 @@
 {% block body %}
 
    <form id="form-add-work" class="form-horizontal" method="post"
-         action="{{ url_for('admin.add_work') }}" enctype="multipart/form-data">
+         action="{{ url_for('admin.signin') }}">
       <fieldset>
-         <legend>添加作品</legend>
+         <legend>登陆管理后台</legend>
 
          {{ form.csrf_token }}
 
-         {{ horizontal_field(form.type_id, length=3) }}
+         {{ horizontal_field(form.username) }}
 
-         {{ horizontal_field(form.image, length=3) }}
-
-         {{ horizontal_field(form.title, length=3) }}
-
-         {{ horizontal_field(form.desc, rows=5) }}
+         {{ horizontal_field(form.password) }}
 
          <div class="form-group">
             <div class="col-md-6 col-md-offset-2">

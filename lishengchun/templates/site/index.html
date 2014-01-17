@@ -1,44 +1,11 @@
 {% extends "layout.html" %}
+{% from "macro/ui.html" import render_works %}
 
 {% block page_title %}李胜春{% endblock %}
 {% block page_id %}page-index{% endblock %}
 
 {% block body %}
-   <script src="{{ url_for('static', filename='js/imagesloaded.min.js') }}"></script>
-   <script src="{{ url_for('static', filename='js/masonry.min.js') }}"></script>
-   <script src="{{ url_for('static', filename='js/lightbox-2.6.min.js') }}"></script>
-   <link rel="stylesheet" href="{{ url_for('static', filename='style/lightbox.css') }}"/>
-
    <h3>全部作品</h3>
 
-   <div class="works-wap">
-      {% for w in works %}
-         <div class="work-item">
-            <a href="{{ w.url }}" class="work-link" data-lightbox="work" title="{{ w.title }}">
-               <img src="{{ w.url }}" class="work-image img-responsive" alt="{{ w.title }}"/>
-            </a>
-
-            <p class="work-info">
-               <a class="work-title" href="{{ url_for('work.view', work_id=w.id) }}">{{ w.title }}</a>
-
-               <span class="created">{{ w.created.date() }}</span>
-
-               <a href="{{ url_for('admin.edit_work', work_id=w.id) }}" title="编辑">
-                  <i class="fa fa-edit"></i>
-               </a>
-            </p>
-         </div>
-      {% endfor %}
-   </div>
-
-   <script>
-      $('.works-wap').imagesLoaded(function () {
-
-         $('.works-wap').masonry({
-            columnWidth: 313,
-            itemSelector: '.work-item'
-         });
-      })
-   </script>
-
+   {{ render_works(works) }}
 {% endblock %}
