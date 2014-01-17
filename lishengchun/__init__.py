@@ -43,7 +43,8 @@ def register_jinja(app):
     # inject vars into template context
     @app.context_processor
     def inject_vars():
-        return dict()
+        from .models import WorkType
+        return dict(g_work_types=WorkType.query.all())
 
     # url generator for pagination
     def url_for_other_page(page):

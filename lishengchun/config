@@ -3,6 +3,9 @@
 # set False in production
 DEBUG = True
 
+AUTH_USERNAME = ''
+AUTH_PASSWORD = ''
+
 # site domain
 SITE_DOMAIN = "http://localhost:5000"
 IMAGE_SERVER_URL = "http://localhost"

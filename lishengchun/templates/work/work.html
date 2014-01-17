@@ -9,7 +9,15 @@
       <div class="col-md-12">
          <h3>{{ work.title }}</h3>
 
-         <p class="work-info">分类：{{ work.type.name }}，作于 {{ work.created.date() }}</p>
+         <p class="work-info">
+            类别：{{ work.type.name }}，作于 {{ work.created.date() }}
+            &nbsp;
+            {% if session.role == 'admin' %}
+               <a href="{{ url_for('admin.edit_work', work_id=work.id) }}" title="编辑">
+                  <i class="fa fa-edit"></i>
+               </a>
+            {% endif %}
+         </p>
 
          {% if work.desc %}
             <p>{{ work.desc }}</p>
