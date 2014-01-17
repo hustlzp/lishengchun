@@ -1,0 +1,5 @@
+*.pyc
+venv/
+.idea/
+lishengchun/config.py
+fabfile.py

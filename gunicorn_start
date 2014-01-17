@@ -1,0 +1,5 @@
+#! /bin/bash
+
+cd /var/www/lishengchun
+source venv/bin/activate
+exec venv/bin/gunicorn -c gunicorn.conf lishengchun:app

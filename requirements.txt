@@ -1,0 +1,9 @@
+Flask
+Flask-SQLAlchemy
+Flask-Uploads
+Flask-WTF
+Flask-Script
+Flask-Mail
+flask_debugtoolbar
+MySQL-python
+gunicorn
