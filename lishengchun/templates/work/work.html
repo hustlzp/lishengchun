@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block page_title %}作品《{{ work.title }}》{% endblock %}
+{% block page_id %}page-work{% endblock %}
+
+{% block body %}
+
+   <div class="row">
+      <div class="col-md-12">
+         <h3>{{ work.title }}</h3>
+
+         <p class="work-info">分类：{{ work.type.name }}，作于 {{ work.created.date() }}</p>
+
+         {% if work.desc %}
+            <p>{{ work.desc }}</p>
+         {% endif %}
+
+         <img src="{{ work.url }}" class="img-responsive" alt=""/>
+      </div>
+
+      <div class="col-md-2"></div>
+   </div>
+
+{% endblock %}

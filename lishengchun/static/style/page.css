@@ -27,7 +27,7 @@ html {
 }
 html body {
   font-family: "arial", "NSimSun", "SimSun", "STSong", "AR PL SungtiL GB", "TW\-Sung", "WenQuanYi Bitmap Song";
-  margin: 0 0 6em 0;
+  margin: 0 0 10em 0;
 }
 html body #main-wap {
   line-height: 180%;
@@ -62,4 +62,8 @@ html body #footer .container #links {
 html body #footer .container #links li {
   display: inline-block;
   margin-right: 15px;
+}
+#page-work .work-info {
+  color: #666;
+  margin-bottom: 14px;
 }

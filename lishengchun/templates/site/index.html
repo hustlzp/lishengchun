@@ -18,8 +18,11 @@
                <img src="{{ w.url }}" class="work-image img-responsive" alt="{{ w.title }}"/>
             </a>
 
-            <p>
-               <span class="work-title">{{ w.title }}</span>
+            <p class="work-info">
+               <a class="work-title" href="{{ url_for('work.view', work_id=w.id) }}">{{ w.title }}</a>
+
+               <span class="created">{{ w.created.date() }}</span>
+
                <a href="{{ url_for('admin.edit_work', work_id=w.id) }}" title="编辑">
                   <i class="fa fa-edit"></i>
                </a>

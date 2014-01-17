@@ -22,7 +22,7 @@ def add_work():
                     type_id=form.type_id.data, desc=form.desc.data)
         db.session.add(work)
         db.session.commit()
-        return redirect(url_for('site.index', work_id=work.id))
+        return redirect(url_for('work.view', work_id=work.id))
     return render_template('admin/add_work.html', form=form)
 
 
@@ -43,7 +43,7 @@ def edit_work(work_id):
         work.desc = form.desc.data
         db.session.add(work)
         db.session.commit()
-        return redirect(url_for('site.index', work_id=work_id))
+        return redirect(url_for('work.view', work_id=work_id))
     return render_template('admin/edit_work.html', work=work, form=form)
 
 

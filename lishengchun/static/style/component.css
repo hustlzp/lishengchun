@@ -31,6 +31,17 @@
 .works-wap .work-item .work-link {
   display: inline-block;
 }
-.works-wap .work-item .work-title {
+.works-wap .work-item .work-info {
+  font-size: 15px;
+}
+.works-wap .work-item .work-info > * {
   margin-right: 5px;
+}
+.works-wap .work-item .work-info .work-title {
+  color: #333333;
+}
+.works-wap .work-item .work-info .created {
+  color: #cccccc;
+  font-size: 12px;
+  line-height: 1;
 }
