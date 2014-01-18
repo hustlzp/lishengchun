@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block page_title %}作品《{{ work.title }}》{% endblock %}
+{% block page_title %}《{{ work.title }}》 - 李胜春的国画作品{% endblock %}
 {% block page_id %}page-work{% endblock %}
 
 {% block body %}
@@ -17,7 +17,7 @@
          <h3>{{ work.title }}</h3>
 
          <p class="work-info">
-            <span>类别：{{ work.type.name }}，作于 {{ work.created.date() }}</span>
+            <span>分类：{{ work.type.name }}，作于 {{ work.created.date() }}</span>
             {% if check_admin() %}
                <a href="{{ url_for('admin.edit_work', work_id=work.id) }}" title="编辑作品"
                      class="link-no-underline">
