@@ -5,12 +5,18 @@
    <link rel="stylesheet" href="{{ url_for('static', filename='style/lightbox.css') }}"/>
 
    <script>
+      $(function () {
+         $('.btn-delete-work').click(function () {
+            return confirm('确认删除吗？');
+         });
+      });
+
       $('.works-wap').imagesLoaded(function () {
          $('.works-wap').masonry({
             columnWidth: 313,
             itemSelector: '.work-item'
          });
-      })
+      });
    </script>
 
    <div class="works-wap">
@@ -25,8 +31,13 @@
                   href="{{ url_for('work.view', work_id=w.id) }}">{{ w.title }}</a>
                <span class="created">{{ w.created.date() }}</span>
                {% if session.role == 'admin' %}
-                  <a href="{{ url_for('admin.edit_work', work_id=w.id) }}" title="编辑">
+                  <a href="{{ url_for('admin.edit_work', work_id=w.id) }}" title="编辑作品"
+                     class="link-no-underline">
                      <i class="fa fa-edit"></i>
+                  </a>
+                  <a href="{{ url_for('admin.delete_work', work_id=w.id) }}" title="删除作品"
+                     class="btn-delete-work link-no-underline">
+                     <i class="fa fa-trash-o"></i>
                   </a>
                {% endif %}
             </p>

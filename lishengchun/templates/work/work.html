@@ -4,17 +4,28 @@
 {% block page_id %}page-work{% endblock %}
 
 {% block body %}
+   <script>
+      $(function(){
+         $('.btn-delete-work').click(function(){
+            return confirm('确认删除吗？');
+         });
+      })
+   </script>
 
    <div class="row">
       <div class="col-md-12">
          <h3>{{ work.title }}</h3>
 
          <p class="work-info">
-            类别：{{ work.type.name }}，作于 {{ work.created.date() }}
-            &nbsp;
+            <span>类别：{{ work.type.name }}，作于 {{ work.created.date() }}</span>
             {% if session.role == 'admin' %}
-               <a href="{{ url_for('admin.edit_work', work_id=work.id) }}" title="编辑">
+               <a href="{{ url_for('admin.edit_work', work_id=work.id) }}" title="编辑作品"
+                     class="link-no-underline">
                   <i class="fa fa-edit"></i>
+               </a>
+               <a href="{{ url_for('admin.delete_work', work_id=work.id) }}" title="删除作品"
+                     class="btn-delete-work link-no-underline">
+                  <i class="fa fa-trash-o"></i>
                </a>
             {% endif %}
          </p>

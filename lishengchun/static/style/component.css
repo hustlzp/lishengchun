@@ -45,3 +45,9 @@
   font-size: 12px;
   line-height: 1;
 }
+.link-no-underline {
+  text-decoration: none;
+}
+.link-no-underline:hover {
+  text-decoration: none;
+}

@@ -67,3 +67,6 @@ html body #footer .container #links li {
   color: #666;
   margin-bottom: 14px;
 }
+#page-work .work-info > * {
+  margin-right: 5px;
+}

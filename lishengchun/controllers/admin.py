@@ -63,6 +63,14 @@ def edit_work(work_id):
     return render_template('admin/edit_work.html', work=work, form=form)
 
 
+@bp.route('/work/<int:work_id>/delete')
+def delete_work(work_id):
+    work = Work.query.get_or_404(work_id)
+    db.session.delete(work)
+    db.session.commit()
+    return redirect(url_for('site.index'))
+
+
 def save_image(file_storage, upload_set):
     """获取上传图片的size，并保存"""
     image = Image.open(file_storage.stream)
