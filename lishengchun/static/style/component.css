@@ -30,6 +30,7 @@
 }
 .works-wap .work-item .work-link {
   display: inline-block;
+  width: 100%;
 }
 .works-wap .work-item .work-info {
   font-size: 15px;
