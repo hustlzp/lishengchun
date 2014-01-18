@@ -4,21 +4,6 @@
    <script src="{{ url_for('static', filename='js/lightbox-2.6.min.js') }}"></script>
    <link rel="stylesheet" href="{{ url_for('static', filename='style/lightbox.css') }}"/>
 
-   <script>
-      $(function () {
-         $('.btn-delete-work').click(function () {
-            return confirm('确认删除吗？');
-         });
-      });
-
-      $('.works-wap').imagesLoaded(function () {
-         $('.works-wap').masonry({
-            columnWidth: 313,
-            itemSelector: '.work-item'
-         });
-      });
-   </script>
-
    <div class="works-wap">
       {% for w in works %}
          <div class="work-item">
@@ -44,4 +29,19 @@
          </div>
       {% endfor %}
    </div>
+
+   <script>
+      $(function () {
+         $('.btn-delete-work').click(function () {
+            return confirm('确认删除吗？');
+         });
+      });
+
+      $('.works-wap').imagesLoaded(function () {
+         $('.works-wap').masonry({
+            columnWidth: 313,
+            itemSelector: '.work-item'
+         });
+      });
+   </script>
 {% endmacro %}
