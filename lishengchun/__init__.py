@@ -56,6 +56,10 @@ def register_jinja(app):
 
     app.jinja_env.globals['url_for_other_page'] = url_for_other_page
 
+    from .permissions import check_admin
+
+    app.jinja_env.globals['check_admin'] = check_admin
+
 
 def register_logger(app):
     """Send error log to admin by smtp"""

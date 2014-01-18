@@ -7,6 +7,7 @@ from PIL import Image
 from ..forms import WorkForm, SigninForm
 from ..models import db, Work, WorkType
 from ..utils import random_filename
+from ..permissions import admin_permission
 
 bp = Blueprint('admin', __name__)
 
@@ -28,6 +29,7 @@ def signout():
 
 
 @bp.route('/add_work', methods=['GET', 'POST'])
+@admin_permission
 def add_work():
     """添加作品"""
     form = WorkForm()
@@ -43,6 +45,7 @@ def add_work():
 
 
 @bp.route('/work/<int:work_id>/edit', methods=['GET', 'POST'])
+@admin_permission
 def edit_work(work_id):
     """编辑作品"""
     work = Work.query.get_or_404(work_id)
@@ -64,6 +67,7 @@ def edit_work(work_id):
 
 
 @bp.route('/work/<int:work_id>/delete')
+@admin_permission
 def delete_work(work_id):
     work = Work.query.get_or_404(work_id)
     db.session.delete(work)
