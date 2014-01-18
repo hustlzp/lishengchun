@@ -6,13 +6,11 @@ manager = Manager(app)
 
 @manager.command
 def run():
-    from lishengchun import app
     app.run(debug=True)
 
 
 @manager.command
 def syncdb():
-    from lishengchun import models
     models.db.create_all()
 
 

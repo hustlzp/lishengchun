@@ -7,15 +7,15 @@ AUTH_USERNAME = ''
 AUTH_PASSWORD = ''
 
 # site domain
-SITE_DOMAIN = "http://localhost:5000"
-IMAGE_SERVER_URL = "http://localhost"
+SITE_DOMAIN = "http://www.lishengchun.com"
+IMAGE_SERVER_URL = "http://localhost:8080"
 
 # image upload path
-UPLOADS_DEFAULT_DEST = "/Library/WebServer/Documents/lsc_uploads"
+UPLOADS_DEFAULT_DEST = "/var/www/lsc_uploads"
 UPLOADS_DEFAULT_URL = "%s/lsc_uploads/" % IMAGE_SERVER_URL
 
 # app config
-SECRET_KEY = ""
+SECRET_KEY = "A0Zr98j/3yX R~XHH!jmN]LWX/,?RT"
 PERMANENT_SESSION_LIFETIME = 3600 * 24 * 7
 SESSION_COOKIE_NAME = 'lsc_session'
 

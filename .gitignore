@@ -1,5 +1,6 @@
 *.pyc
 venv/
 .idea/
-lishengchun/config.py
+*/config.py
+*/config_remote.py
 fabfile.py
