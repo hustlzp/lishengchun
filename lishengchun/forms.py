@@ -18,7 +18,7 @@ class WorkForm(Form):
 
 class SigninForm(Form):
     username = TextField('用户名', [DataRequired('用户不能为空')])
-    password = TextField('密码', [DataRequired('密码不能为空')])
+    password = PasswordField('密码', [DataRequired('密码不能为空')])
 
     def validate_password(self, field):
         if self.username.data != config.AUTH_USERNAME or field.data != config.AUTH_PASSWORD:
