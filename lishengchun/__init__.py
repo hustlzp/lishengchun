@@ -1,6 +1,6 @@
 # coding: utf-8
 import sys
-from flask import Flask, request, url_for, session, g, render_template
+from flask import Flask, request, url_for, render_template
 from flask_wtf.csrf import CsrfProtect
 from flask.ext.uploads import configure_uploads
 from flask_debugtoolbar import DebugToolbarExtension

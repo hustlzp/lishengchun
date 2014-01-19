@@ -9,6 +9,7 @@ AUTH_PASSWORD = ''
 # site domain
 SITE_DOMAIN = "http://www.lishengchun.com"
 IMAGE_SERVER_URL = "http://localhost:8080"
+HOST_STRING = ""
 
 # image upload path
 UPLOADS_DEFAULT_DEST = "/var/www/lsc_uploads"
