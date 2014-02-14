@@ -17,7 +17,7 @@
          <h3>{{ work.title }}</h3>
 
          <p class="work-info">
-            <span>分类：{{ work.type.name }}，作于 {{ work.created.date() }}</span>
+            <span>分类：{{ work.type.name }}</span>
             {% if check_admin() %}
                <a href="{{ url_for('admin.edit_work', work_id=work.id) }}" title="编辑作品"
                      class="link-no-underline">
