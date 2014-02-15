@@ -66,15 +66,10 @@
 <div id="footer">
    <div class='container'>
       <div id='copyright'>
-         李胜春的国画作品 ©2013 by <a href="http://hustlzp.com" target="_blank">hustlzp</a>
+         李胜春的国画作品 ©2014 by <a href="http://hustlzp.com" target="_blank">hustlzp</a>
       </div>
 
       <ul id='links'>
-         {% if session.role == 'admin' %}
-            <li><a href="{{ url_for('admin.signout') }}">登出</a></li>
-         {% else %}
-            <li><a href="{{ url_for('admin.signin') }}">登陆</a></li>
-         {% endif %}
          <li><a target="_blank" href="https://github.com/hustlzp/lishengchun">GitHub</a></li>
       </ul>
    </div>
